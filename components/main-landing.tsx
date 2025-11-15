@@ -8,9 +8,18 @@ export function MainLanding() {
   const [showUserModal, setShowUserModal] = useState(false)
   const [showAdminModal, setShowAdminModal] = useState(false)
 
+  const redirectToUser = () => {
+    window.location.href = "https://user-side-app.vercel.com"
+  }
+
+  const redirectToAdmin = () => {
+    window.location.href = "https://admin-side-app.vercel.com"
+  }
+
   return (
     <div className="fixed inset-0 bg-gradient-to-br from-[#f5f3ff] via-[#e8f4f8] to-[#f0e8ff] flex flex-col items-center justify-center overflow-hidden">
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
+
         {/* Floating orb top-right */}
         <div
           className="absolute -top-40 -right-40 w-96 h-96 rounded-full blur-3xl opacity-60"
@@ -52,31 +61,26 @@ export function MainLanding() {
       </div>
 
       <div className="relative z-10 flex flex-col items-center justify-center gap-16 px-4">
+
         {/* App Name */}
         <div className="text-center space-y-6">
           <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-[#4a7c7e] via-[#2d5f7d] to-[#5a6b8f] bg-clip-text text-transparent text-balance animate-fade-in">
-            PaySecure
+            CardGuard
           </h1>
+
           <div className="flex gap-2 justify-center">
-            <div
-              className="h-1 w-8 bg-gradient-to-r from-[#6fb3b0] to-[#4a7c7e] rounded-full animate-pulse"
-              style={{ animationDuration: "3s" }}
-            />
-            <div
-              className="h-1 w-8 bg-gradient-to-r from-[#7ca8c9] to-[#6fb3b0] rounded-full animate-pulse"
-              style={{ animationDuration: "3s", animationDelay: "0.5s" }}
-            />
-            <div
-              className="h-1 w-8 bg-gradient-to-r from-[#9d7eb8] to-[#7ca8c9] rounded-full animate-pulse"
-              style={{ animationDuration: "3s", animationDelay: "1s" }}
-            />
+            <div className="h-1 w-8 bg-gradient-to-r from-[#6fb3b0] to-[#4a7c7e] rounded-full animate-pulse" style={{ animationDuration: "3s" }} />
+            <div className="h-1 w-8 bg-gradient-to-r from-[#7ca8c9] to-[#6fb3b0] rounded-full animate-pulse" style={{ animationDuration: "3s", animationDelay: "0.5s" }} />
+            <div className="h-1 w-8 bg-gradient-to-r from-[#9d7eb8] to-[#7ca8c9] rounded-full animate-pulse" style={{ animationDuration: "3s", animationDelay: "1s" }} />
           </div>
         </div>
 
+        {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-10 md:gap-16">
+
           {/* User Button */}
           <button
-            onClick={() => setShowUserModal(true)}
+            onClick={redirectToUser}
             className="group relative px-10 py-5 text-lg font-semibold text-white rounded-3xl overflow-hidden transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none"
             style={{
               background: "linear-gradient(135deg, #6fb3b0 0%, #4a9d99 50%, #6fb3b0 100%)",
@@ -86,20 +90,14 @@ export function MainLanding() {
             }}
           >
             <span className="relative z-10 block">User Access</span>
-            {/* Shimmer animation */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-            {/* Glow ring */}
-            <div
-              className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              style={{
-                boxShadow: "inset 0 0 20px rgba(255, 255, 255, 0.1)",
-              }}
-            />
+            <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              style={{ boxShadow: "inset 0 0 20px rgba(255, 255, 255, 0.1)" }} />
           </button>
 
           {/* Admin Button */}
           <button
-            onClick={() => setShowAdminModal(true)}
+            onClick={redirectToAdmin}
             className="group relative px-10 py-5 text-lg font-semibold text-white rounded-3xl overflow-hidden transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none"
             style={{
               background: "linear-gradient(135deg, #7ca8c9 0%, #5a8fb5 50%, #7ca8c9 100%)",
@@ -110,15 +108,9 @@ export function MainLanding() {
             }}
           >
             <span className="relative z-10 block">Admin Access</span>
-            {/* Shimmer animation */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-            {/* Glow ring */}
-            <div
-              className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              style={{
-                boxShadow: "inset 0 0 20px rgba(255, 255, 255, 0.1)",
-              }}
-            />
+            <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              style={{ boxShadow: "inset 0 0 20px rgba(255, 255, 255, 0.1)" }} />
           </button>
         </div>
       </div>
@@ -164,7 +156,7 @@ export function MainLanding() {
         }
       `}</style>
 
-      {/* Modals */}
+      {/* Modals (still included, but unused now) */}
       <UserAccessModal open={showUserModal} onOpenChange={setShowUserModal} />
       <AdminAccessModal open={showAdminModal} onOpenChange={setShowAdminModal} />
     </div>
