@@ -9,11 +9,11 @@ export function MainLanding() {
   const [showAdminModal, setShowAdminModal] = useState(false)
 
   const redirectToUser = () => {
-    window.location.href = "https://user-side-app.vercel.com"
+    window.location.href = "https://user-side-app.vercel.app"
   }
 
   const redirectToAdmin = () => {
-    window.location.href = "https://admin-side-app.vercel.com"
+    window.location.href = "https://admin-side-app.vercel.app"
   }
 
   return (
